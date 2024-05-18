@@ -12,16 +12,17 @@ n!=n*n-1*n-2*n-3....
 n!=n*(n-1)!
 */
 
-//recursive approach
+//tail call recursive
 
-function factorial(n) {
-  if (n < 1) return 1;
-  return n * factorial(n - 1);
+function factorial(n, x) {
+  if (n < 1) return x;
+  return factorial(n - 1, n * x);
 }
 let n = 5;
-console.log(factorial(n));
+console.log(factorial(n, 1));
 
 /*
 iterative approach -> one direction one way path travelling
 recursive approach -> multi direction multiple way path travelling
+normal recursive function takes time and space so to optimize that we use tail call recursive function
 */
