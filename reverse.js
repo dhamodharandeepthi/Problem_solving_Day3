@@ -1,8 +1,15 @@
 //Reverse a given string
 let str = "dhamu";
-let reversedStr = "";
-for (let i = str.length - 1; i >= 0; i--) {
-  reversedStr += str[i];
+str = str.split("");
+for (let start = 0, end = str.length - 1; start < end; start++, end--) {
+  let char = str[start];
+  str[start] = str[end];
+  str[end] = char;
 }
-console.log(str); //dhamu
-console.log(reversedStr); //umahd
+console.log(str); //[ 'u', 'm', 'a', 'h', 'd' ]
+console.log(str.join("")); //umahd
+
+/*
+note:
+strings are immutable so couldn't swap so change to array using split function then join 
+*/
