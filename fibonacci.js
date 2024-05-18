@@ -8,20 +8,24 @@ fibonacci(3)=>fibonacci(2)+fibonacci(1)
 fibonacci(n)=>fibonacci(n-1)+fibonacci(n-2)
 */
 
-//recursive approach
-function fibonacci(n) {
-  if (n < 2) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
+function fibonacci(n, prev, curr) {
+  if (n === 0) {
+    return prev;
+  } else if (n === 1) {
+    return curr;
+  } else {
+    return fibonacci(n - 1, curr, prev + curr);
+  }
 }
-let n = 10;
+
 console.time("fibo");
-console.log(fibonacci(n)); //55
-console.timeEnd("fibo"); //1.8ms
+console.log(fibonacci(10, 0, 1)); // Output: 55
+console.timeEnd("fibo"); //4.39ms
 
-console.time("fibo40");
-console.log(fibonacci(40)); //102334155
-console.timeEnd("fibo40"); //723.9ms
+console.time("fibo");
+console.log(fibonacci(40, 0, 1)); // Output: 102334155
+console.timeEnd("fibo"); //0.886ms
 
-console.time("fibo50");
-console.log(fibonacci(50)); //102334155
-console.timeEnd("fibo50"); //still code running it will takes time
+console.time("fibo");
+console.log(fibonacci(50, 0, 1)); // Output: 12586269025
+console.timeEnd("fibo"); //0.378ms
