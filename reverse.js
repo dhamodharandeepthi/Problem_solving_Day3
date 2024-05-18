@@ -10,3 +10,4 @@ function reverse(str) {
 }
 
 console.log(reverse(str)); //umahd
+console.log(str); //dhamu //note : original str not modified
