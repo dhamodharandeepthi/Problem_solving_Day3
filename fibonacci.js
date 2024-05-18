@@ -17,3 +17,11 @@ let n = 10;
 console.time("fibo");
 console.log(fibonacci(n)); //55
 console.timeEnd("fibo"); //1.8ms
+
+console.time("fibo40");
+console.log(fibonacci(40)); //102334155
+console.timeEnd("fibo40"); //723.9ms
+
+console.time("fibo50");
+console.log(fibonacci(50)); //102334155
+console.timeEnd("fibo50"); //still code running it will takes time
